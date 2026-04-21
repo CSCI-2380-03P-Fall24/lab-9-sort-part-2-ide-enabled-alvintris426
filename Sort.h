@@ -120,7 +120,7 @@ int minFind(double arr[], int start, int n) {
 }
 void newSort(double arr[], int n) {
     for (int i = 0; i < n - 1; i++) {
-        int minIndex = minFind(arr, i, n); // find smallest in remaining array
-        swap(arr, i, minIndex);           // put it in correct position
+        int minIndex = minFind(arr, i, n);
+        swap(arr, i, minIndex);
     }
-    }
+}
