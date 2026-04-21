@@ -101,30 +101,26 @@ Step 3: Finally, use your two functions above to complete the following in newSo
         *** You can make this recursive, if you wish!
 */
 
-void swap(double darray[], int index1, int index2) {
-    void swap(double darray[], int index1, int index2) {
-    double temp = darray[index1];
-    darray[index1] = darray[index2];
-    darray[index2] = temp;
+void swap(double arr[], int index1, int index2) {
+    double temp = arr[index1];
+    arr[index1] = arr[index2];
+    arr[index2] = temp;
 }
 
-int minFind(double darray[], int start, int n) {
+int minFind(double arr[], int start, int n) {
     int minIndex = start;
 
     for (int i = start + 1; i < n; i++) {
-        if (darray[i] < darray[minIndex]) {
+        if (arr[i] < arr[minIndex]) {
             minIndex = i;
         }
     }
 
     return minIndex;
 }
-
-void newSort(double darray[], int n) {
+void newSort(double arr[], int n) {
     for (int i = 0; i < n - 1; i++) {
-        int minIndex = minFind(darray, i, n);
-        swap(darray, i, minIndex);
+        int minIndex = minFind(arr, i, n); // find smallest in remaining array
+        swap(arr, i, minIndex);           // put it in correct position
     }
-}
-
-}
+    }
